@@ -6,7 +6,7 @@ module.exports = {
       { estado_civil: 'Não registrado' },
       { estado_civil: 'Casado(a)' },
       { estado_civil: 'Solteiro(a)' },
-      { estado_civil: 'Viúvo(a)' },
+      { estado_civil: 'Vivo(a)' },
     ], {});
   },
 
