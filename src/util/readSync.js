@@ -90,8 +90,8 @@ const buildAlunoVinculos = (aluno_vinculos) => {
     dados.push({
       cpf: tokens_aluno[0],
       matricula_vinculo: tokens_aluno[1],
-      id_curso: tokens_aluno[2],
-      id_situacao_vinculo: tokens_aluno[3],
+      id_curso: Number(tokens_aluno[2]),
+      id_situacao_vinculo: Number(tokens_aluno[3]),
       periodo_evasao: tokens_aluno[4],
     });
   }
