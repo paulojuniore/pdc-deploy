@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const { readFile, buildAlunos } = require('../../populate/populateDB');
+const { readFile, buildAlunos } = require('../../database/populateDB');
 var filePath = path.resolve(__dirname, '..', '..', '..', 'data', 'aluno.csv');
 
 module.exports = {

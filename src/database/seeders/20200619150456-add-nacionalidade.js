@@ -1,7 +1,7 @@
 'use strict';
 
 const path = require('path');
-const { readFile, buildNacionalidades } = require('../../populate/populateDB');
+const { readFile, buildNacionalidades } = require('../../database/populateDB');
 var filePath = path.resolve(__dirname, '..', '..', '..', 'data', 'nacionalidade.csv');
 
 module.exports = {
