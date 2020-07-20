@@ -25,6 +25,7 @@ const Disciplina = require('../models/Disciplina');
 const SituacaoDisciplina = require('../models/SituacaoDisciplina');
 const Professor = require('../models/Professor');
 const Horario = require('../models/Horario');
+const Turma = require('../models/Turma');
 
 // Intância da conexão com o postgres através do sequelize
 const connection = new Sequelize(dbConfig);
@@ -51,6 +52,7 @@ Disciplina.init(connection);
 SituacaoDisciplina.init(connection);
 Professor.init(connection);
 Horario.init(connection);
+Turma.init(connection);
 
 // definição das associações
 AlunoVinculo.associate(connection.models);
