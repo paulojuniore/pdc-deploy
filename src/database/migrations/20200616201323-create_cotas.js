@@ -9,7 +9,7 @@ module.exports = {
         autoIncrement: true,
         allowNull: false,
       },
-      descricao_cota: {
+      descricao: {
         type: Sequelize.STRING,
         allowNull: false,
         unique: true,

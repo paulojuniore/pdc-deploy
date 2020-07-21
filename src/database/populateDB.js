@@ -19,18 +19,7 @@ const buildCursos = (cursos) => {
   const dados = [];
   for (let i = 0; i < cursos.length; i++) {
     dados.push({
-      nome_curso: cursos[i]
-    });
-  }
-  return dados;
-}
-
-// Função responsável por preparar os dados de cotas para inserção no banco de dados.
-const buildCotas = cotas => {
-  const dados = [];
-  for (let i = 0; i < cotas.length; i++) {
-    dados.push({
-      descricao_cota: cotas[i]
+      nome: cursos[i]
     });
   }
   return dados;
@@ -80,17 +69,6 @@ const buildGeneros = generos => {
   return dados;
 }
 
-// Função responsável por preparar os dados de ingresso para inserção no banco de dados.
-const buildIngressos = ingressos => {
-  const dados = [];
-  for (let i = 0; i < ingressos.length; i++) {
-    dados.push({
-      descricao_ingresso: ingressos[i]
-    });
-  }
-  return dados;
-}
-
 // Função responsável por preparar os dados de munícipios para inserção no banco de dados.
 const buildMunicipios = (municipios) => {
   const dados = [];
@@ -126,24 +104,13 @@ const buildPaisOrigem = paises => {
   return dados;
 }
 
-// Função responsável por preparar os dados de situação do aluno ou situação do
-//vínculo para inserção no banco de dados.
-const buildSituacao = situacao => {
+// Função responsável por preparar os dados de tabelas (que possuem apenas o campo
+//"descricao" como colunas (exceto o id)) para inserção no banco de dados.
+const buildDescricao = situacao => {
   const dados = [];
   for (let i = 0; i < situacao.length; i++) {
     dados.push({
-      descricao_situacao: situacao[i]
-    });
-  }
-  return dados;
-}
-
-// Função responsável por preparar os dados de raças para inserção no banco de dados.
-const buildRacas = racas => {
-  const dados = [];
-  for (let i = 0; i < racas.length; i++) {
-    dados.push({
-      raça: racas[i]
+      descricao: situacao[i]
     });
   }
   return dados;
@@ -209,17 +176,14 @@ const buildAlunoVinculos = (aluno_vinculos) => {
 module.exports = { 
   readFile,
   buildCursos,
-  buildCotas,
   buildDeficiencias,
   buildEscolas,
   buildEstadosCivis,
   buildGeneros,
-  buildIngressos,
   buildMunicipios,
   buildNacionalidades,
   buildPaisOrigem,
-  buildRacas,
-  buildSituacao,
+  buildDescricao,
   buildAlunos,
   buildAlunoDeficiencias,
   buildAlunoVinculos,

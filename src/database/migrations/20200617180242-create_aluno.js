@@ -15,7 +15,7 @@ module.exports = {
       id_situacao: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'SituacaoAluno', key: 'id' },
+        references: { model: 'SituacaoDiscente', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
@@ -98,7 +98,7 @@ module.exports = {
       id_raca: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'Raca', key: 'id' },
+        references: { model: 'Cor', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
