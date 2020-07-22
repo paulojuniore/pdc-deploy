@@ -25,39 +25,6 @@ const buildCursos = (cursos) => {
   return dados;
 }
 
-// Função responsável por preparar os dados de escolas para inserção no banco de dados.
-const buildEscolas = escolas => {
-  const dados = [];
-  for (let i = 0; i < escolas.length; i++) {
-    dados.push({
-      tipo_escola: escolas[i]
-    });
-  }
-  return dados;
-}
-
-// Função responsável por preparar os dados de estados civis para inserção no banco de dados.
-const buildEstadosCivis = estados_civis => {
-  const dados = [];
-  for (let i = 0; i < estados_civis.length; i++) {
-    dados.push({
-      estado_civil: estados_civis[i]
-    });
-  }
-  return dados;
-}
-
-// Função responsável por preparar os dados de gêneros para inserção no banco de dados.
-const buildGeneros = generos => {
-  const dados = [];
-  for (let i = 0; i < generos.length; i++) {
-    dados.push({
-      genero: generos[i]
-    });
-  }
-  return dados;
-}
-
 // Função responsável por preparar os dados de munícipios para inserção no banco de dados.
 const buildMunicipios = (municipios) => {
   const dados = [];
@@ -165,9 +132,6 @@ const buildAlunoVinculos = (aluno_vinculos) => {
 module.exports = { 
   readFile,
   buildCursos,
-  buildEscolas,
-  buildEstadosCivis,
-  buildGeneros,
   buildMunicipios,
   buildNacionalidades,
   buildPaisOrigem,

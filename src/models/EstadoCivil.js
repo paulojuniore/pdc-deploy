@@ -3,7 +3,7 @@ const { Model, DataTypes } = require('sequelize');
 class EstadoCivil extends Model {
   static init(connection) {
     super.init({
-      estado_civil: DataTypes.STRING,
+      descricao: DataTypes.STRING,
     }, {
       sequelize: connection,
       timestamps: false,
