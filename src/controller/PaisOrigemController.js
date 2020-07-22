@@ -1,12 +1,12 @@
-const PaisOrigem = require('../models/PaisOrigem');
+const PaisOrigem = require('../models/Pais');
 
 module.exports = {
   async store(req, res) {
     const {
-      país_origem
+      descricao
     } = req.body;
 
-    const origin_country = await PaisOrigem.create({ país_origem });
+    const origin_country = await PaisOrigem.create({ descricao });
 
     return res.json(origin_country);
   }

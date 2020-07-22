@@ -2,8 +2,8 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('AlunoDeficiencia', { 
-      cpf_aluno: {
+    return queryInterface.createTable('DiscenteDeficiencia', { 
+      cpf: {
         type: Sequelize.STRING(11),
         allowNull: false,
         primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      codigo_deficiencia: {
+      id_deficiencia: {
         type: Sequelize.INTEGER,
         allowNull: false,
         primaryKey: true,
@@ -23,6 +23,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('AlunoDeficiencia');
+    return queryInterface.dropTable('DiscenteDeficiencia');
   }
 };

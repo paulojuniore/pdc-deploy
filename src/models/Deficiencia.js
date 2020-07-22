@@ -11,7 +11,7 @@ class Deficiencia extends Model {
   }
 
   static associate(models) {
-    this.belongsToMany(models.AlunoDeficiencia, { foreignKey: 'codigo_deficiencia', through: 'AlunoDeficiencia', as: 'deficiencia-alunos' });
+    this.belongsToMany(models.DiscenteDeficiencia, { foreignKey: 'codigo_deficiencia', through: 'AlunoDeficiencia', as: 'deficiencia-alunos' });
   }
 }
 

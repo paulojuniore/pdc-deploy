@@ -1,4 +1,4 @@
-const AlunoVinculo = require('../models/AlunoVinculo');
+const AlunoVinculo = require('../models/DiscenteVinculo');
 const Curso = require('../models/Curso');
 const SituacaoVinculo = require('../models/SituacaoVinculo');
 

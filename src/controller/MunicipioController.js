@@ -1,4 +1,4 @@
-const Municipio = require('../models/Municipio');
+const Municipio = require('../models/Naturalidade');
 
 module.exports = {
   async store(req, res) {

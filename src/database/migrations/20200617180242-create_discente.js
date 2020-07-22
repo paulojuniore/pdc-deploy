@@ -84,14 +84,14 @@ module.exports = {
       id_pais_origem: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'PaisOrigem', key: 'id' },
+        references: { model: 'Pais', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
       id_naturalidade: {
         type: Sequelize.INTEGER,
         allowNull: false,
-        references: { model: 'Municipio', key: 'id' },
+        references: { model: 'Naturalidade', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },

@@ -1,6 +1,6 @@
 const Aluno = require('../models/Discente');
 const Deficiencia = require('../models/Deficiencia');
-const AlunoDeficiencia = require('../models/AlunoDeficiencia');
+const DiscenteDeficiencia = require('../models/DiscenteDeficiencia');
 
 module.exports = {
   async store(req, res) {
@@ -19,7 +19,7 @@ module.exports = {
       return res.json({ error: 'Deficiency not found' });
     }
 
-    const aluno_deficiencia = await AlunoDeficiencia.create({
+    const aluno_deficiencia = await DiscenteDeficiencia.create({
       cpf_aluno: cpf,
       codigo_deficiencia: id_deficiencia
     })

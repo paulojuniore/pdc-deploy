@@ -1,9 +1,9 @@
 const { Model, DataTypes } = require('sequelize');
 
-class PaisOrigem extends Model {
+class Pais extends Model {
   static init(connection) {
     super.init({
-      país_origem: DataTypes.STRING,
+      nome: DataTypes.STRING,
     }, {
       sequelize: connection,
       timestamps: false,
@@ -15,4 +15,4 @@ class PaisOrigem extends Model {
   }
 }
 
-module.exports = PaisOrigem;
+module.exports = Pais;

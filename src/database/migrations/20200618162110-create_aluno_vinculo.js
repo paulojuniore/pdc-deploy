@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('AlunoVinculo', { 
+    return queryInterface.createTable('DiscenteVinculo', { 
       cpf: {
         type: Sequelize.STRING(11),
         primaryKey: true,
@@ -11,7 +11,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      matricula_vinculo: {
+      matricula: {
         type: Sequelize.STRING(9),
         primaryKey: true,
         allowNull: false,
@@ -30,7 +30,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      periodo_evasao: {
+      semestre_vinculo: {
         type: Sequelize.STRING,
         allowNull: false,
       },
@@ -38,6 +38,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('AlunoVinculo');
+    return queryInterface.dropTable('DiscenteVinculo');
   }
 };
