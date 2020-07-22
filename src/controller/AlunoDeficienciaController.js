@@ -1,4 +1,4 @@
-const Aluno = require('../models/Aluno');
+const Aluno = require('../models/Discente');
 const Deficiencia = require('../models/Deficiencia');
 const AlunoDeficiencia = require('../models/AlunoDeficiencia');
 

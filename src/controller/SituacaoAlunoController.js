@@ -1,4 +1,4 @@
-const SituacaoAluno = require('../models/SituacaoAluno');
+const SituacaoDiscente = require('../models/SituacaoDiscente');
 
 module.exports = {
   async store(req, res) {

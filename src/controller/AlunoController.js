@@ -1,5 +1,5 @@
 const connection = require('../database/index');
-const Aluno = require('../models/Aluno');
+const Aluno = require('../models/Discente');
 
 module.exports = {
   async store(req, res) {
@@ -48,7 +48,7 @@ module.exports = {
     const { cpf } = req.params;
 
     const aluno = await Aluno.findByPk(cpf, {
-      include: { association: 'aluno-deficiencias' },
+      include: { association: 'aluno' },
       where: { cpf_aluno: cpf }
     });
 

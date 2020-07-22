@@ -11,7 +11,7 @@ class SituacaoDiscente extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_situacao', as: 'situacao-aluno' });
+    this.hasOne(models.Discente, { foreignKey: 'id_situacao', as: 'situacao-aluno' });
   }
 } 
 

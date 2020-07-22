@@ -11,7 +11,7 @@ class Genero extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_genero', as: 'genero-aluno' });
+    this.hasOne(models.Discente, { foreignKey: 'id_genero', as: 'genero-aluno' });
   }
 }
 

@@ -12,7 +12,7 @@ class Municipio extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_naturalidade', as: 'naturalidade-aluno' });
+    this.hasOne(models.Discente, { foreignKey: 'id_naturalidade', as: 'naturalidade-aluno' });
   }
 }
 

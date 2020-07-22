@@ -11,7 +11,7 @@ class Nacionalidade extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_nacionalidade', as: 'nacionalidade-aluno' });
+    this.hasOne(models.Discente, { foreignKey: 'id_nacionalidade', as: 'nacionalidade-aluno' });
   }
 }
 

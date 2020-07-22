@@ -7,7 +7,7 @@ module.exports = {
         type: Sequelize.STRING(11),
         primaryKey: true,
         allowNull: false,
-        references: { model: 'Aluno', key: 'cpf' },
+        references: { model: 'Discente', key: 'cpf' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },

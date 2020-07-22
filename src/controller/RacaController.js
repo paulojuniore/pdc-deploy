@@ -1,4 +1,4 @@
-const Raca = require('../models/Raca');
+const Cor = require('../models/Cor');
 
 module.exports = {
   async store(req, res) {

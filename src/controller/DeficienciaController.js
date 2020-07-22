@@ -1,5 +1,5 @@
 const Deficiencia = require('../models/Deficiencia');
-const Aluno = require('../models/Aluno');
+const Aluno = require('../models/Discente');
 
 module.exports = {
   async store(req, res) {
@@ -17,8 +17,13 @@ module.exports = {
 
     const def = await Deficiencia.findAll({
       include: { association: 'deficiencia-alunos' },
-      where: { codigo_deficiencia: id_deficiencia }
+      where: { id: id_deficiencia }
     });
+
+    // const def = await Deficiencia.findAll({
+    //   include: { association: 'deficiencia-alunos' },
+    //   where: { codigo_deficiencia: id_deficiencia }
+    // });
 
     return res.json(def);
   }

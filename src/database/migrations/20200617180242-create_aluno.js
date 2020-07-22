@@ -2,7 +2,7 @@
 
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('Aluno', {
+    return queryInterface.createTable('Discente', {
       cpf: {
         type: Sequelize.STRING(11),
         primaryKey: true,
@@ -95,7 +95,7 @@ module.exports = {
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
-      id_raca: {
+      id_cor: {
         type: Sequelize.INTEGER,
         allowNull: false,
         references: { model: 'Cor', key: 'id' },
@@ -106,6 +106,6 @@ module.exports = {
   },
 
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('Aluno');
+    return queryInterface.dropTable('Discente');
   }
 };

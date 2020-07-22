@@ -11,7 +11,7 @@ class Cor extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Cor, { foreignKey: 'id_raca', as: 'raca-aluno' });
+    this.hasOne(models.Cor, { foreignKey: 'id_cor', as: 'raca-aluno' });
   }
 }
 

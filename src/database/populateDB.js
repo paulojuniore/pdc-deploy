@@ -25,17 +25,6 @@ const buildCursos = (cursos) => {
   return dados;
 }
 
-// Função responsável por preparar os dados de deficiências para inserção no banco de dados.
-const buildDeficiencias = deficiencias => {
-  const dados = [];
-  for (let i = 0; i < deficiencias.length; i++) {
-    dados.push({
-      descricao_deficiencia: deficiencias[i]
-    });
-  }
-  return dados;
-}
-
 // Função responsável por preparar os dados de escolas para inserção no banco de dados.
 const buildEscolas = escolas => {
   const dados = [];
@@ -138,7 +127,7 @@ const buildAlunos = (alunos) => {
       id_nacionalidade: Number(tokens_aluno[13]),
       id_pais_origem: Number(tokens_aluno[14]),
       id_naturalidade: Number(tokens_aluno[15]),
-      id_raca: Number(tokens_aluno[16])
+      id_cor: Number(tokens_aluno[16])
     });
   }
   return dados;
@@ -176,7 +165,6 @@ const buildAlunoVinculos = (aluno_vinculos) => {
 module.exports = { 
   readFile,
   buildCursos,
-  buildDeficiencias,
   buildEscolas,
   buildEstadosCivis,
   buildGeneros,

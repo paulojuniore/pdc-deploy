@@ -21,7 +21,7 @@ class AlunoVinculo extends Model {
   }
 
   static associate(models) {
-    this.belongsTo(models.Aluno, { foreignKey: 'cpf', as: 'aluno' });
+    this.belongsTo(models.Discente, { foreignKey: 'cpf', as: 'aluno' });
     this.belongsTo(models.Curso, { foreignKey: 'id_curso', as: 'curso-vinculo' });
     this.belongsTo(models.SituacaoVinculo, { foreignKey: 'id_situacao_vinculo', as: 'situacao-vinculo' })
   }

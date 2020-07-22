@@ -11,7 +11,7 @@ class EstadoCivil extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_estado_civil', as: 'estado-civil-aluno' });
+    this.hasOne(models.Discente, { foreignKey: 'id_estado_civil', as: 'estado-civil-aluno' });
   }
 }
 

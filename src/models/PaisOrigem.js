@@ -11,7 +11,7 @@ class PaisOrigem extends Model {
   }
 
   static associate(models) {
-    this.hasOne(models.Aluno, { foreignKey: 'id_pais_origem', as: 'pais-origem-aluno' });
+    this.hasOne(models.Discente, { foreignKey: 'id_pais_origem', as: 'pais-origem-aluno' });
   }
 }
 

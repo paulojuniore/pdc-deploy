@@ -4,7 +4,7 @@ const Sequelize = require('sequelize');
 const dbConfig = require('../config/database');
 
 // Importação dos models
-const Aluno = require('../models/Aluno');
+const Discente = require('../models/Discente');
 const SituacaoDiscente = require('../models/SituacaoDiscente');
 const AlunoVinculo = require('../models/AlunoVinculo');
 const Ingresso = require('../models/Ingresso');
@@ -31,7 +31,7 @@ const Turma = require('../models/Turma');
 const connection = new Sequelize(dbConfig);
 
 // Conexão dos models a conexão do bd
-Aluno.init(connection);
+Discente.init(connection);
 SituacaoDiscente.init(connection);
 AlunoVinculo.init(connection);
 Ingresso.init(connection);
@@ -56,7 +56,7 @@ Turma.init(connection);
 
 // definição das associações
 AlunoVinculo.associate(connection.models);
-Aluno.associate(connection.models);
+Discente.associate(connection.models);
 Deficiencia.associate(connection.models);
 
 module.exports = connection;
