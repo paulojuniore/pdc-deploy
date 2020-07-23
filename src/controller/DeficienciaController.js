@@ -1,12 +1,11 @@
 const Deficiencia = require('../models/Deficiencia');
-const Aluno = require('../models/Discente');
 
 module.exports = {
   async store(req, res) {
-    const { descricao_deficiencia } = req.body;
+    const { descricao } = req.body;
     
     const deficiencia = await Deficiencia.create({
-      descricao_deficiencia
+      descricao
     });
 
     return res.json(deficiencia);

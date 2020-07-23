@@ -1,4 +1,4 @@
-const Aluno = require('../models/Discente');
+const Discente = require('../models/Discente');
 const Deficiencia = require('../models/Deficiencia');
 const DiscenteDeficiencia = require('../models/DiscenteDeficiencia');
 
@@ -7,9 +7,9 @@ module.exports = {
     const { cpf } = req.headers;
     const { id_deficiencia } = req.params;
 
-    const aluno = await Aluno.findByPk(cpf);
+    const discente = await Discente.findByPk(cpf);
 
-    if (!aluno) {
+    if (!discente) {
       return res.json({ error: 'Student not found' });
     }
 
@@ -20,9 +20,9 @@ module.exports = {
     }
 
     const aluno_deficiencia = await DiscenteDeficiencia.create({
-      cpf_aluno: cpf,
-      codigo_deficiencia: id_deficiencia
-    })
+      cpf,
+      id_deficiencia
+    });
 
     return res.json(aluno_deficiencia);
   }
