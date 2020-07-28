@@ -166,6 +166,20 @@ const buildDiscentesVinculos = (aluno_vinculos) => {
   return dados;
 }
 
+// Função responsável por preparar os dados de faltas para inserção no banco de dados.
+const buildFaltas = (faltas) => {
+  const dados = [];
+  for (let i = 0; i < faltas.length; i++) {
+    const tokens_faltas = faltas[i].split(';');
+    dados.push({
+      matricula: tokens_faltas[0],
+      id_turma: Number(tokens_faltas[1]),
+      num_aula: Number(tokens_faltas[2]),
+    });
+  }
+  return dados;
+}
+
 module.exports = { 
   readFile,
   buildDescricao,
@@ -178,4 +192,5 @@ module.exports = {
   buildDiscentes,
   buildDiscentesDeficiencias,
   buildDiscentesVinculos,
+  buildFaltas,
 }
