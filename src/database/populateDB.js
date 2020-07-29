@@ -155,10 +155,28 @@ const buildDiscenteDisciplinas = (aluno_disciplinas) => {
   const dados = [];
   for (let i = 0; i < aluno_disciplinas.length; i++) {
     const tokens_aluno_disciplinas = aluno_disciplinas[i].split(';');
+
+    // verifica se o id_turma é válido ou não
+    if (tokens_aluno_disciplinas[1] === "") {
+      tokens_aluno_disciplinas[1] = null;
+    } else {
+      tokens_aluno_disciplinas[1] = Number(tokens_aluno_disciplinas[1]);
+    }
+
+    // substituindo a "," por "." nos valores de ponto flutuante válidos, e caso não haja
+    //valor válido, é assumido null.
+    for (let j = 2; j < tokens_aluno_disciplinas.length - 1; j++) {
+      if (tokens_aluno_disciplinas[j] === "") {
+        tokens_aluno_disciplinas[j] = null;
+      } else {
+        tokens_aluno_disciplinas[j] = Number(tokens_aluno_disciplinas[j].replace(',', '.'));
+      }
+    }
+
     dados.push({
       matricula: tokens_aluno_disciplinas[0],
-      id_turma: Number(tokens_aluno_disciplinas[1]),
-      num_faltas: Number(tokens_aluno_disciplinas[2]),
+      id_turma: tokens_aluno_disciplinas[1],
+      num_faltas: tokens_aluno_disciplinas[2],
       nota1: tokens_aluno_disciplinas[3],
       nota2: tokens_aluno_disciplinas[4],
       nota3: tokens_aluno_disciplinas[5],
