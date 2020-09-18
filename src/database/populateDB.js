@@ -1,5 +1,4 @@
 const fs = require('fs');
-// const path = require('path');
 
 // Função responsável por ler um arquivo .csv e retorná-lo em formato de array
 //onde cada item representa uma linha do arquivo.
@@ -192,7 +191,7 @@ const buildDiscenteDisciplinas = (aluno_disciplinas) => {
     // substituindo a "," por "." nos valores de ponto flutuante válidos, e caso não haja
     //valor válido, é assumido null.
     for (let j = 2; j < tokens_aluno_disciplinas.length - 1; j++) {
-      if (tokens_aluno_disciplinas[j] === "") {
+      if (tokens_aluno_disciplinas[j] === "" || tokens_aluno_disciplinas[j] === "-") {
         tokens_aluno_disciplinas[j] = null;
       } else {
         tokens_aluno_disciplinas[j] = Number(tokens_aluno_disciplinas[j].replace(',', '.'));
@@ -250,9 +249,6 @@ const buildFaltas = (faltas) => {
   }
   return dados;
 }
-
-// var filePath = path.resolve(__dirname, '..', '..', 'data', 'Discente2.data');
-// console.log(buildDiscentes(readFile(filePath)))
 
 module.exports = { 
   readFile,
