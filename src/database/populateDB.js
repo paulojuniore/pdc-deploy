@@ -1,4 +1,5 @@
 const fs = require('fs');
+// const path = require('path');
 
 // Função responsável por ler um arquivo .csv e retorná-lo em formato de array
 //onde cada item representa uma linha do arquivo.
@@ -112,6 +113,15 @@ const buildDiscentes = (alunos) => {
   const dados = [];
   for (let i = 0; i < alunos.length; i++) {
     const tokens_aluno = alunos[i].split(';');
+
+    // caso no lugar da Nota de ingresso ENEM/Vestibular seja igual a um '-', este é
+    // substituído por null.
+    if (tokens_aluno[32] === '-') {
+      tokens_aluno[32] = null
+    } else {
+      tokens_aluno[32] = Number(tokens_aluno[32].replace(',', '.'))
+    }
+
     dados.push({
       cpf: tokens_aluno[0],
       nome: tokens_aluno[1],
@@ -129,7 +139,23 @@ const buildDiscentes = (alunos) => {
       id_nacionalidade: Number(tokens_aluno[13]),
       id_pais_origem: Number(tokens_aluno[14]),
       id_naturalidade: Number(tokens_aluno[15]),
-      id_cor: Number(tokens_aluno[16])
+      id_cor: Number(tokens_aluno[16]),
+      curriculo: tokens_aluno[17],
+      carga_hor_obrig_int: Number(tokens_aluno[18]),
+      cred_obrig_int: Number(tokens_aluno[19]),
+      carga_hor_opt_int: Number(tokens_aluno[20]),
+      cred_opt_int: Number(tokens_aluno[21]),
+      carga_hor_comp_int: Number(tokens_aluno[22]),
+      cred_comp_int: Number(tokens_aluno[23]),
+      cra: Number(tokens_aluno[24].replace(',', '.')),
+      mc: Number(tokens_aluno[25].replace(',', '.')),
+      iea: Number(tokens_aluno[26].replace(',', '.')),
+      per_int: Number(tokens_aluno[27]),
+      tranc: Number(tokens_aluno[28]),
+      mat_inst: Number(tokens_aluno[29]),
+      mob_estudantil: Number(tokens_aluno[30]),
+      cred_matriculados: Number(tokens_aluno[31]),
+      media_geral_ingresso: tokens_aluno[32],
     });
   }
   return dados;
@@ -224,6 +250,9 @@ const buildFaltas = (faltas) => {
   }
   return dados;
 }
+
+// var filePath = path.resolve(__dirname, '..', '..', 'data', 'Discente2.data');
+// console.log(buildDiscentes(readFile(filePath)))
 
 module.exports = { 
   readFile,

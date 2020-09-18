@@ -164,7 +164,7 @@ module.exports = {
       },
       media_geral_ingresso: {
         type: Sequelize.REAL,
-        allowNull: false,
+        allowNull: true,
       }
     });
   },
