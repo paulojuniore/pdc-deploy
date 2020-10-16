@@ -2,7 +2,7 @@
 
 const path = require('path');
 const { readFile, buildDiscentesVinculos } = require('../../database/populateDB');
-var filePath = path.resolve(__dirname, '..', '..', '..', 'data', 'DiscenteVinculo.data');
+var filePath = path.resolve(__dirname, '..', '..', '..', 'data', 'NewDiscenteVinculo.data');
 
 module.exports = {
   up: (queryInterface, Sequelize) => {

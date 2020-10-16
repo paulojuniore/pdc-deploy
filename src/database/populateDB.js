@@ -198,39 +198,54 @@ const buildDiscentesVinculos = (aluno_vinculos) => {
 
     // caso no lugar da Nota de ingresso ENEM/Vestibular seja igual a um '-', este é
     // substituído por null.
-    if (tokens_aluno[26] === '-') {
+    if (tokens_aluno[26] === '' || isNaN(tokens_aluno[26])) {
       tokens_aluno[26] = null
     } else {
-      tokens_aluno[26] = Number(tokens_aluno[26].replace(',', '.'))
+      tokens_aluno[26] = Number(tokens_aluno[26].replace(',', '.'));
+    }
+
+    for (let j=8; j <= 25; j++) {
+      if (j === 18 || j === 19 || j === 20) {
+        if (tokens_aluno[j] === '') {
+          tokens_aluno[j] = null;
+        } else {
+          tokens_aluno[j] = Number(tokens_aluno[j].replace(',', '.'));
+        }
+      }
+      else if (Number(tokens_aluno[j]) === 0) {
+        tokens_aluno[j] = null;
+      } else {
+        tokens_aluno[j] = Number(tokens_aluno[j]);
+      }
     }
 
     dados.push({
       cpf: tokens_aluno[0],
       matricula: tokens_aluno[1],
-      id_ingresso: Number(tokens_aluno[2]),
+      id_ingresso: Number(tokens_aluno[2]) === 0 ? null : Number(tokens_aluno[2]),
       semestre_ingresso: tokens_aluno[3],
       id_curso: Number(tokens_aluno[4]),
       id_situacao: Number(tokens_aluno[5]),
       semestre_situacao: tokens_aluno[6],
       id_situacao_vinculo: Number(tokens_aluno[7]),
-      id_cota: Number(tokens_aluno[8]),
-      id_tipo_escola: Number(tokens_aluno[9]),
-      ano_conclusao_ensino_medio: Number(tokens_aluno[10]),
+      id_cota: Number(tokens_aluno[8]) === 0 ? null : Number(tokens_aluno[8]),
+      id_tipo_escola: Number(tokens_aluno[9]) === 0 ? null : Number(tokens_aluno[9]),
+      ano_conclusao_ensino_medio: tokens_aluno[10],
       curriculo: tokens_aluno[11],
-      carga_hor_obrig_int: Number(tokens_aluno[12]),
-      cred_obrig_int: Number(tokens_aluno[13]),
-      carga_hor_opt_int: Number(tokens_aluno[14]),
-      cred_opt_int: Number(tokens_aluno[15]),
-      carga_hor_comp_int: Number(tokens_aluno[16]),
-      cred_comp_int: Number(tokens_aluno[17]),
-      cra: Number(tokens_aluno[18].replace(',', '.')),
-      mc: Number(tokens_aluno[19].replace(',', '.')),
-      iea: Number(tokens_aluno[20].replace(',', '.')),
-      per_int: Number(tokens_aluno[21]),
-      tranc: Number(tokens_aluno[22]),
-      mat_inst: Number(tokens_aluno[23]),
-      mob_estudantil: Number(tokens_aluno[24]),
-      cred_matriculados: Number(tokens_aluno[25]),
+      carga_hor_obrig_int: tokens_aluno[12],
+      cred_obrig_int: tokens_aluno[13],
+      carga_hor_opt_int: tokens_aluno[14],
+      cred_opt_int: tokens_aluno[15],
+      carga_hor_comp_int: tokens_aluno[16],
+      cred_comp_int: tokens_aluno[17],
+      cra: tokens_aluno[18],
+      mc: tokens_aluno[19],
+      iea: tokens_aluno[20],
+      per_int: tokens_aluno[21],
+      tranc: tokens_aluno[22],
+      mat_inst: tokens_aluno[23],
+      mob_estudantil: tokens_aluno[24],
+      cred_matriculados: tokens_aluno[25],
       media_geral_ingresso: tokens_aluno[26],
     });
   }

@@ -18,7 +18,7 @@ module.exports = {
       },
       id_ingresso: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: { model: 'Ingresso', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
@@ -54,81 +54,81 @@ module.exports = {
       },
       id_cota: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: { model: 'Cota', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
       id_tipo_escola: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
         references: { model: 'Escola', key: 'id' },
         onUpdate: 'CASCADE',
         onDelete: 'CASCADE',
       },
       ano_conclusao_ensino_medio: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       curriculo: {
         type: Sequelize.STRING(4),
-        allowNull: false,
+        allowNull: true,
       },
       carga_hor_obrig_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       cred_obrig_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       carga_hor_opt_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       cred_opt_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       carga_hor_comp_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       cred_comp_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       cra: {
         type: Sequelize.REAL,
-        allowNull: false,
+        allowNull: true,
       },
       mc: {
         type: Sequelize.REAL,
-        allowNull: false,
+        allowNull: true,
       },
       iea: {
         type: Sequelize.REAL,
-        allowNull: false,
+        allowNull: true,
       },
       per_int: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       tranc: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       mat_inst: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       mob_estudantil: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       cred_matriculados: {
         type: Sequelize.INTEGER,
-        allowNull: false,
+        allowNull: true,
       },
       media_geral_ingresso: {
         type: Sequelize.REAL,
