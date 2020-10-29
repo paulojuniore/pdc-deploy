@@ -6,7 +6,6 @@ class Curriculo extends Model {
       codigo_disciplina: {
         type: DataTypes.STRING(7),
         primaryKey: true,
-        autoIncrement: true,
         allowNull: false,
       },
       id_tipo_disciplina: DataTypes.INTEGER,
