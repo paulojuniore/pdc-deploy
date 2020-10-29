@@ -14,6 +14,20 @@ const readFile = (file) => {
   return generosSplitted;
 }
 
+// Função que prepara os dados da tabela Curriculo para inserção no banco de dados.
+const buildCurriculo = curriculos => {
+  const dados = [];
+  for (let i = 0; i < curriculos.length; i++) {
+    const tokens_curriculo = curriculos[i].split(';');
+    dados.push({
+      codigo_disciplina: tokens_curriculo[0],
+      id_tipo_disciplina: Number(tokens_curriculo[1]),
+      id_unidade_academica: Number(tokens_curriculo[2]),
+    });
+  }
+  return dados;
+}
+
 // Função responsável por preparar os dados de tabelas (que possuem apenas o campo
 //"descricao" como colunas (exceto o id)) para inserção no banco de dados.
 const buildDescricao = descricoes => {
@@ -268,6 +282,7 @@ const buildFaltas = (faltas) => {
 
 module.exports = { 
   readFile,
+  buildCurriculo,
   buildDescricao,
   buildDisciplinas,
   buildNaturalidades,
