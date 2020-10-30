@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 // Função responsável por ler um arquivo .csv e retorná-lo em formato de array
 //onde cada item representa uma linha do arquivo.
@@ -212,13 +213,15 @@ const buildDiscentesVinculos = (aluno_vinculos) => {
 
     // caso no lugar da Nota de ingresso ENEM/Vestibular seja igual a um '-', este é
     // substituído por null.
-    if (tokens_aluno[26] === '' || isNaN(tokens_aluno[26])) {
-      tokens_aluno[26] = null
+    if (tokens_aluno[26] === '' || tokens_aluno[26] === '-') {
+      tokens_aluno[26] = null;
     } else {
       tokens_aluno[26] = Number(tokens_aluno[26].replace(',', '.'));
     }
 
+    // Preenchendo campos null e convertendo as strings para number.
     for (let j=8; j <= 25; j++) {
+      // verificação dos valores referentes a cra, mc e iea.
       if (j === 18 || j === 19 || j === 20) {
         if (tokens_aluno[j] === '') {
           tokens_aluno[j] = null;
@@ -226,18 +229,14 @@ const buildDiscentesVinculos = (aluno_vinculos) => {
           tokens_aluno[j] = Number(tokens_aluno[j].replace(',', '.'));
         }
       }
-      else if (Number(tokens_aluno[j]) === 0) {
-        tokens_aluno[j] = null;
-      } else {
-        tokens_aluno[j] = Number(tokens_aluno[j]);
-      }
+      tokens_aluno[j] = Number(tokens_aluno[j]);
     }
 
     dados.push({
       cpf: tokens_aluno[0],
       matricula: tokens_aluno[1],
       id_ingresso: Number(tokens_aluno[2]) === 0 ? null : Number(tokens_aluno[2]),
-      periodo_ingresso: tokens_aluno[3],
+      periodo_ingresso: tokens_aluno[3] === '' ? 0 : tokens_aluno[3],
       id_curso: Number(tokens_aluno[4]),
       id_situacao: Number(tokens_aluno[5]),
       periodo_situacao: tokens_aluno[6],
@@ -279,6 +278,9 @@ const buildFaltas = (faltas) => {
   }
   return dados;
 }
+
+// var filePath = path.resolve(__dirname, '..', '..', 'data', 'DiscenteVinculo.data');
+// console.log(buildDiscentesVinculos(readFile(filePath)));
 
 module.exports = { 
   readFile,
